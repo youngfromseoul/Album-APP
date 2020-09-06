@@ -9,14 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var curruntValue = 0
+    
+    @IBOutlet weak var likeLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresh()
     }
+    
     @IBAction func showAlert(_ sender: Any) {
-        let alert = UIAlertController(title: "Hello", message: "First My APP", preferredStyle: .alert)
+        let likeMessage = "좋아요는 \(curruntValue) 입니다."
+        let alert = UIAlertController(title: "Like💕", message: likeMessage, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+        refresh()
     }
-} 
+    
+    func refresh() {
+        let randomLike = arc4random_uniform(10000) + 1
+        curruntValue = Int(randomLike)
+        likeLabel.text = "❤️ = \(curruntValue)"
+        
+    }
+}
