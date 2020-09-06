@@ -23,10 +23,11 @@ class ViewController: UIViewController {
     @IBAction func showAlert(_ sender: Any) {
         let likeMessage = "좋아요는 \(curruntValue) 입니다."
         let alert = UIAlertController(title: "Like💕", message: likeMessage, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let action = UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.refresh()
+        })
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        refresh()
     }
     
     func refresh() {
