@@ -1,2 +1,2 @@
 # first-swift
-swift 첫 앱 만들기
+swift 공부 기록
