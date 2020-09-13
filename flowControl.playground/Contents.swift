@@ -76,3 +76,35 @@ for i in closedRange {
         print ("gugu -> \(i) * \(j) = \(i * j)")
     }
 }
+
+let num = 10
+
+switch num {
+case 0...10 :
+    print("--> 0-5 사이입니다")
+case 10:
+    print("--> 10입니다")
+default:
+    print("--> 나머지입니다")
+}
+
+let num2 = 6
+switch num2 {
+case _ where num2 % 2 == 0 :
+    print ("--짝수")
+default:
+    print ("--홀수")
+}
+
+let coordinate = (x: 0, y: 10)
+
+switch coordinate {
+case (0, 0):
+    print("-->원점")
+case (let x, 0):
+    print("-->x축 x:\(x)")
+case (0, let y):
+    print("-->y축 \(y)")
+case (let x, let y):
+    print("-->좌표 어딘가 x,y = \(x),\(y)")
+}
