@@ -108,3 +108,27 @@ case (0, let y):
 case (let x, let y):
     print("-->좌표 어딘가 x,y = \(x),\(y)")
 }
+
+
+func printTotalPrice(price: Int, count: Int) {
+    print("Total Price: \(price * count)")
+}
+
+printTotalPrice(price: 1500, count: 5)
+printTotalPrice(price: 1500, count: 10)
+
+
+func printTotalPricewithDefaultValue(price: Int = 1500, count: Int) {
+    print("Total Price: \(price * count)")
+}
+printTotalPricewithDefaultValue(count: 10)
+
+func totalPrice(price: Int, count: Int)-> Int {
+    let totalPrice = price * count
+    return totalPrice
+}
+
+let calcuratePrice = totalPrice(price: 10000, count: 77)
+calcuratePrice
+
+
